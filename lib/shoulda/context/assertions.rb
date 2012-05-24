@@ -52,7 +52,7 @@ module Shoulda # :nodoc:
         end
 
         if matcher.matches?(target)
-          assert_block { true }
+          assert true
           if options[:message]
             assert_match options[:message], matcher.negative_failure_message
           end
@@ -71,7 +71,7 @@ module Shoulda # :nodoc:
         not_match = matcher.respond_to?(:does_not_match?) ? matcher.does_not_match?(target) : !matcher.matches?(target)
 
         if not_match
-          assert_block { true }
+          assert true
           if options[:message]
             assert_match options[:message], matcher.failure_message
           end
